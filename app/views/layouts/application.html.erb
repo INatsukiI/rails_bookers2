@@ -6,6 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -37,16 +38,24 @@
               </li>
               <% else %>
               <li>
-                <%= link_to "Home", root_path ,class: "nav-link text-light" %>
+                <%= link_to root_path ,class: "nav-link text-light" do %>
+                  <i class="fas fa-home"></i> Home
+                <% end %>
               </li>
               <li>
-                <%= link_to "About", about_path ,class: 'nav-link text-light' %>
+                <%= link_to about_path ,class: 'nav-link text-light' do %>
+                  <i class="fas fa-link"></i> About
+                <% end %>
               </li>
               <li>
-                <%= link_to "Sign up", new_user_registration_path ,class: 'nav-link text-light' %>
+                <%= link_to new_user_registration_path ,class: 'nav-link text-light' do %>
+                  <i class="fas fa-user-plus"></i> Sign up
+                <% end %>
               </li>
               <li>
-                <%= link_to "Log in", new_user_session_path ,class: 'nav-link text-light' %>
+                <%= link_to new_user_session_path ,class: 'nav-link text-light' do %>
+                  <i class="fas fa-sign-in-alt"></i> Log in
+                <% end %>
               </li>
               <% end %>
             </ul>
