@@ -25,16 +25,24 @@
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
               <li>
-                <%= link_to "Home修正する", root_path %>
+                <%= link_to user_path(current_user.id), class: "nav-link text-light" do %>
+                  <i class="fas fa-home"></i> Home
+                <% end %>
               </li>
               <li>
-               <%= link_to "Users修正する", about_path %>
+               <%= link_to users_path, class: "nav-link text-light" do %>
+                 <i class="fas fa-users"></i> Users
+               <% end %>
               </li>
               <li>
-                <%= link_to "Books修正する", about_path %>
+                <%= link_to books_path, class: "nav-link text-light" do %>
+                  <i class="fas fa-book-open"></i> Books
+                <% end %>
               </li>
               <li>
-                <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+                <%= link_to destroy_user_session_path, method: :delete , class: "nav-link text-light" do %>
+                  <i class="fas fa-sign-out-alt"></i> Log out
+                <% end %>
               </li>
               <% else %>
               <li>
